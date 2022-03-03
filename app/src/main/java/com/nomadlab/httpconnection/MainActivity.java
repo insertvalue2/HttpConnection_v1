@@ -7,9 +7,11 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.nomadlab.httpconnection.response.Person;
-import com.nomadlab.httpconnection.response.Post;
-import com.nomadlab.httpconnection.response.Todo;
+import com.nomadlab.httpconnection.models.UserDto;
+import com.nomadlab.httpconnection.models.response.Person;
+import com.nomadlab.httpconnection.models.response.Post;
+import com.nomadlab.httpconnection.models.response.Todo;
+import com.nomadlab.httpconnection.service.UserService;
 import com.nomadlab.httpconnection.utils.HttpClient;
 
 import org.json.JSONArray;
@@ -30,15 +32,20 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Todo> todos;
     private ArrayList<Post> posts;
     private HttpClient httpClient;
+    private UserDto userDto;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        httpClient = HttpClient.getInstance();
-
+        UserService userService = new UserService();
+        // 쓰레드에 대한 동작 이해 설명 (디버깅)
+        userDto = userService.read("1");
+//        Log.d("TAG", "userDto : " + userDto.getUsername());
+//        httpClient = HttpClient.getInstance();
 //        requestTodos();
 //        requestPosts();
-        savePost();
+//        savePost();
     }
 
     private void savePost() {

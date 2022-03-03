@@ -1,4 +1,4 @@
-package com.nomadlab.httpconnection.response;
+package com.nomadlab.httpconnection.models.response;
 //
 // jsonObject.put("이름", "홍길동");
 //         jsonObject.put("나이", 20);

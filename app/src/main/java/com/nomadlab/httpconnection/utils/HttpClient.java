@@ -4,9 +4,9 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.nomadlab.httpconnection.request.ReqPost;
-import com.nomadlab.httpconnection.response.Post;
-import com.nomadlab.httpconnection.response.Todo;
+import com.nomadlab.httpconnection.models.request.ReqPost;
+import com.nomadlab.httpconnection.models.response.Post;
+import com.nomadlab.httpconnection.models.response.Todo;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -86,7 +86,7 @@ public class HttpClient {
 
         URL url = new URL(baseURL + path);
         conn = (HttpURLConnection) url.openConnection();
-        conn.setRequestMethod(POST);
+        conn.setRequestMethod(method);
         conn.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
         conn.setDoInput(true);
         conn.setDoOutput(true);

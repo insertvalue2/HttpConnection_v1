@@ -1,11 +1,10 @@
-package com.nomadlab.httpconnection.response;
+package com.nomadlab.httpconnection.models.response;
 
-public class Post {
-
+public class Todo {
     private int userId;
     private int id;
     private String title;
-    private String body;
+    private boolean completed;
 
     public int getUserId() {
         return userId;
@@ -31,21 +30,21 @@ public class Post {
         this.title = title;
     }
 
-    public String getBody() {
-        return body;
+    public boolean isCompleted() {
+        return completed;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
     }
 
     @Override
     public String toString() {
-        return "Post{" +
+        return "Todo{" +
                 "userId=" + userId +
                 ", id=" + id +
                 ", title='" + title + '\'' +
-                ", body='" + body + '\'' +
+                ", completed=" + completed +
                 '}';
     }
 }

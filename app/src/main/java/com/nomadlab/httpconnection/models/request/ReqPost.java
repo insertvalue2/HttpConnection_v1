@@ -1,4 +1,4 @@
-package com.nomadlab.httpconnection.request;
+package com.nomadlab.httpconnection.models.request;
 
 public class ReqPost {
     private String title;
